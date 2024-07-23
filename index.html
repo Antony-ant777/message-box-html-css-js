@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #message-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 20px;
+  display: none;
+}
+
+#message-content {
+  text-align: center;
+}
+
+#message-text {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#message-ok {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#message-ok:hover {
+  background-color: #3e8e41;
+}
+  </style>
+</head>
+<body>
+  <div id="message-box" style="display: none;">
+    <div id="message-content">
+      <span id="message-text"></span>
+      <button id="message-ok">OK</button>
+    </div>
+  </div>
+
+  <script>
+    function showMessage(message) {
+  document.getElementById('message-text').innerText = message;
+  document.getElementById('message-box').style.display = 'block';
+}
+
+function hideMessage() {
+  document.getElementById('message-box').style.display = 'none';
+}
+
+document.getElementById('message-ok').addEventListener('click', hideMessage);
+  </script>
+  
+</body>
+</html>
